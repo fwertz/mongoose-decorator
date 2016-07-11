@@ -2,7 +2,7 @@
   "name": "mongoose-decorator",
   "version": "0.0.1",
   "description": "ES7-Style decorators for mongoose. Declare and decorate your models",
-  "main": "index.js",
+  "main": "src/decorators.js",
   "scripts": {
     "test": "npm test"
   },
