@@ -1,0 +1,24 @@
+{
+  "name": "mongoose-decorators",
+  "version": "0.0.1",
+  "description": "ES7-Style decorators for mongoose. Declare and decorate your models",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "mongo",
+    "mongoose",
+    "mongoosejs",
+    "plugin",
+    "decorators",
+    "es6",
+    "es7",
+    "annotations"
+  ],
+  "author": "Francis Wertz <francis.wertz@seisan.com>",
+  "license": "ISC",
+	"dependencies": {
+		"mongoose": "*"
+	}
+}
