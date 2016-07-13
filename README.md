@@ -5,7 +5,7 @@
 `npm install mongoose-decorator`
 
 ## Usage
-`import {model,schema,method,statics,virtual,plugin} from 'mongoose-decorators'`
+`import {model,schema,method,statics,virtual,plugin} from 'mongoose-decorator'`
 
 ## Examples
 Check out the [wiki recipes](https://github.com/fwertz/mongoose-decorator/wiki/Recipes)
