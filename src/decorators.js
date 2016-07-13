@@ -86,7 +86,6 @@ function _schema( Clazz ) {
     });
 
     // Plugins
-    console.log( `plugins: ${plugins.length}`);
     plugins.forEach( plugin => {
         clazz.plugin( plugin.fn, plugin.options );
     });
