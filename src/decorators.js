@@ -2,9 +2,18 @@ import mongoose from 'mongoose';
 
 
 export function model ( modelName ) {
-    return Clazz => {
-        let schema = _schema( Clazz );
-        return mongoose.model( modelName, schema );
+    if ( modelName instanceof Function ) {
+        let name = modelName.name;
+        let schema = _schema( modelName );
+
+        return mongoose.model( name , schema );
+    } else if ( 'string' !== typeof modelName ) {
+        throw Error( 'Model must specify a name' );
+    } else {
+        return Clazz => {
+            let schema = _schema( Clazz );
+            return mongoose.model( modelName , schema );
+        }
     }
 }
 
@@ -22,6 +31,10 @@ export function statics ( clazz, method, descriptor ) {
 }
 
 export function virtual ( path, action = 'get' ) {
+    if ( 'string' !== typeof path  ) {
+        throw new Error( 'A virtual must have a path' );
+    }
+
     return ( clazz, method, descriptor ) => {
         if ( !clazz['$$virtuals'] ) {
             clazz['$$virtuals'] = {
@@ -35,8 +48,11 @@ export function virtual ( path, action = 'get' ) {
 }
 
 export function plugin ( fn, opts ) {
+    if ( !fn instanceof Function ) {
+        throw new Error( 'Plugin must be a function' );
+    }
     return ( clazz  ) => {
-        (clazz['$$plugins'] = clazz['$$plugins'] || []).push( {fn: fn, options: opts } )
+        (clazz.prototype['$$plugins'] = clazz.prototype['$$plugins'] || []).push( {fn: fn, options: opts } )
     }
 }
 
@@ -70,6 +86,7 @@ function _schema( Clazz ) {
     });
 
     // Plugins
+    console.log( `plugins: ${plugins.length}`);
     plugins.forEach( plugin => {
         clazz.plugin( plugin.fn, plugin.options );
     });
