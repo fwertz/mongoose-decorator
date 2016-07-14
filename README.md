@@ -11,5 +11,6 @@
 Check out the [wiki recipes](https://github.com/fwertz/mongoose-decorator/wiki/Recipes)
 
 ## Roadmap
-+ Add `@index`
++ Add support for hooks
++ Add support for `@index`
 + Support static properties (currently only static methods)

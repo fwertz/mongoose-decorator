@@ -1,6 +1,6 @@
 {
   "name": "mongoose-decorator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ES7-Style decorators for mongoose. Declare and decorate your models",
   "main": "lib/decorators.js",
   "scripts": {
@@ -20,6 +20,13 @@
   ],
   "author": "Francis Wertz <francis.wertz@seisan.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fwertz/mongoose-decorator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fwertz/mongoose-decorator/issues"
+  },
   "dependencies": {
     "mongoose": "^4.5.4"
   },
